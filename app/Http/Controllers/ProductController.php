@@ -54,9 +54,7 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'price' => 'sometimes|required|numeric|min:0',
-            'stock_quantity' => 'sometimes|required|integer|min:0',
+            
             'threshold_quantity' => 'sometimes|required|integer|min:1',
             'aisle_id' => 'sometimes|required|exists:aisles,id',
             'category_id' => 'sometimes|required|exists:categories,id',
