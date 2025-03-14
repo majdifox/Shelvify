@@ -31,5 +31,23 @@ class Product extends Model
         'is_promotion' => 'boolean',
     ];
 
+    public function aisle()
+    {
+        return $this->belongsTo(Aisle::class);
+    }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function getPopularProducts()
+    {
+        return $this->products()->where('is_popular', true)->get();
+    }
+
+    public function getPromotionProducts()
+    {
+        return $this->products()->where('is_promotion', true)->get();
+    }
 }
