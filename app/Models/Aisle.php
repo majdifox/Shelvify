@@ -21,14 +21,6 @@ class Aisle extends Model
         'status' => 'boolean',
     ];
 
-    public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
 
-    public function category()
-    {
-        return $this->hasMany(Category::class);
-    }
 }
 
